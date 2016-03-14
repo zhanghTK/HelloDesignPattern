@@ -7,14 +7,14 @@ import java.lang.reflect.Proxy;
  */
 public class DynProxyFactory {
     public static Subject getInstance(){
-        Subject realSubject = new RealSubject();  // ±»´úÀí¶ÔÏó
-        // ´úÀí¶ÔÏó,´Ë¶ÔÏóÊÇÔÚÔËĞĞÊ±¶¯Ì¬Éú³ÉµÄ¶ÔÏó
+        Subject realSubject = new RealSubject();  // è¢«ä»£ç†å¯¹è±¡
+        // ä»£ç†å¯¹è±¡,æ­¤å¯¹è±¡æ˜¯åœ¨è¿è¡Œæ—¶åŠ¨æ€ç”Ÿæˆçš„å¯¹è±¡
         Subject proxy = (Subject) Proxy.newProxyInstance(
-                // ClassLoader¶ÔÏó£¬¶¨ÒåÓÉÄÄ¸öClassLoader¶ÔÏóÀ´¶ÔÉú³ÉµÄ´úÀí¶ÔÏó¼ÓÔØ
+                // ClassLoaderå¯¹è±¡ï¼Œå®šä¹‰ç”±å“ªä¸ªClassLoaderå¯¹è±¡æ¥å¯¹ç”Ÿæˆçš„ä»£ç†å¯¹è±¡åŠ è½½
                 realSubject.getClass().getClassLoader(),
-                // Ò»¸öInterface¶ÔÏóµÄÊı×é£¬±íÊ¾±»´úÀíµÄ¶ÔÏóĞèÒªÊµÏÖÄÄĞ©½Ó¿Ú
+                // ä¸€ä¸ªInterfaceå¯¹è±¡çš„æ•°ç»„ï¼Œè¡¨ç¤ºè¢«ä»£ç†çš„å¯¹è±¡éœ€è¦å®ç°å“ªäº›æ¥å£
                 realSubject.getClass().getInterfaces(),
-                // Ò»¸öInvocationHandler¶ÔÏó£¬±íÊ¾¶¯Ì¬´úÀí¶ÔÏóÔÚµ÷ÓÃ·½·¨Ê±¹ØÁªµ½ÄÄ¸öInvocationHandler¶ÔÏó
+                // ä¸€ä¸ªInvocationHandlerå¯¹è±¡ï¼Œè¡¨ç¤ºåŠ¨æ€ä»£ç†å¯¹è±¡åœ¨è°ƒç”¨æ–¹æ³•æ—¶å…³è”åˆ°å“ªä¸ªInvocationHandlerå¯¹è±¡
                 new SubjectInvocationHandler(realSubject));
         return proxy;
     }
