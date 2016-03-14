@@ -4,7 +4,7 @@ package tk.zhangh.pattern.proxy.simple;
  * Created by ZhangHao on 2016/3/8.
  */
 public class ProxySubject implements Subject{
-    // Êµ¼Ê±»´úÀí¶ÔÏó
+    // å®é™…è¢«ä»£ç†å¯¹è±¡
     private Subject realSubject;
 
     public ProxySubject(Subject realSubject) {
@@ -14,7 +14,7 @@ public class ProxySubject implements Subject{
     @Override
     public void dealTask(String taskName) {
         long start = System.currentTimeMillis();  // AOP
-        realSubject.dealTask(taskName);  // Ö´ĞĞ±»´úÀí¶ÔÏóµÄ·½·¨
+        realSubject.dealTask(taskName);  // æ‰§è¡Œè¢«ä»£ç†å¯¹è±¡çš„æ–¹æ³•
         long end = System.currentTimeMillis();  // AOP
         System.out.println("consuming " + (end - start) + "ms");
     }
