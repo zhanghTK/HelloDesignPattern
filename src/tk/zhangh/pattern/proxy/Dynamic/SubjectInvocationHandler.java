@@ -8,10 +8,10 @@ import java.lang.reflect.Method;
  */
 public class SubjectInvocationHandler implements InvocationHandler{
 
-    // ±»´úÀíµÄÕæÊµ¶ÔÏó
+    // è¢«ä»£ç†çš„çœŸå®å¯¹è±¡
     private Object delegate;
 
-    // ³õÊ¼»¯±»´úÀíµÄÕæÊµ¶ÔÏó
+    // åˆå§‹åŒ–è¢«ä»£ç†çš„çœŸå®å¯¹è±¡
     public SubjectInvocationHandler(Object delegate) {
         this.delegate = delegate;
     }
@@ -20,7 +20,7 @@ public class SubjectInvocationHandler implements InvocationHandler{
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         doBefore();  // AOP
         long start = System.currentTimeMillis();  // AOP
-        // ·´Éäµ÷ÓÃ±»´úÀí¶ÔÏóµÄ·½·¨
+        // åå°„è°ƒç”¨è¢«ä»£ç†å¯¹è±¡çš„æ–¹æ³•
         method.invoke(delegate, args);
         long end = System.currentTimeMillis();
         System.out.println("consuming " + (end - start) + "ms");  // AOP
