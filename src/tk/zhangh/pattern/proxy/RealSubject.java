@@ -1,4 +1,4 @@
-package tk.zhangh.pattern.proxy.Dynamic;
+package tk.zhangh.pattern.proxy;
 
 
 /**
