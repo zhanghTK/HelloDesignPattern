@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
        <!--命令模式组装-->
        <bean name="receiver" class="tk.zhangh.pattern.command.Receiver"/>
        <bean name="commandOpen" class="tk.zhangh.pattern.command.CommandOpen">
@@ -13,5 +13,11 @@
        <bean name="invoker" class="tk.zhangh.pattern.command.Invoker">
               <constructor-arg name="openCommand" ref="commandOpen"/>
               <constructor-arg name="closeCommand" ref="commandClose"/>
+       </bean>
+
+       <!--装饰器组装-->
+       <bean name="adaptee" class="tk.zhangh.pattern.adapter.Adaptee"/>
+       <bean name="adapter" class="tk.zhangh.pattern.adapter.Adapter2">
+              <constructor-arg name="adaptee" ref="adaptee"/>
        </bean>
 </beans>
