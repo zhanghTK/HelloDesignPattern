@@ -20,4 +20,7 @@
        <bean name="adapter" class="tk.zhangh.pattern.adapter.Adapter2">
               <constructor-arg name="adaptee" ref="adaptee"/>
        </bean>
+
+       <!--状态模式-->
+       <bean id="context" class="tk.zhangh.pattern.state.Context"/>
 </beans>
