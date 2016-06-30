@@ -6,7 +6,7 @@ package tk.zhangh.pattern.singleton;
  */
 public enum EnumSingleton {
     INSTANCE;
-    public void test(){
-        System.out.println("biu...");
+    public void functionInEnum(){
+        System.out.println("function in enum");
     }
 }
