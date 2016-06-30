@@ -1,6 +1,9 @@
 package tk.zhangh.pattern.factory.simple;
 
+import org.junit.Assert;
 import org.junit.Test;
+import tk.zhangh.pattern.factory.simple.product.ConcreateProductA;
+import tk.zhangh.pattern.factory.simple.product.ConcreateProductB;
 import tk.zhangh.pattern.factory.simple.product.IProduct;
 
 /**
@@ -10,9 +13,15 @@ import tk.zhangh.pattern.factory.simple.product.IProduct;
 public class SimpleFactoryTest {
     @Test
     public void testSimpleFactory(){
-        IProduct product = SimpleFactory.create("A");
-        product.operation1();
+        IProduct product;
+        product = SimpleFactory.create("A");
+        Assert.assertTrue(product instanceof ConcreateProductA);
         product = SimpleFactory.create("B");
-        product.operation1();
+        Assert.assertTrue(product instanceof ConcreateProductB);
+
+        product = SimpleFactory.createA();
+        Assert.assertTrue(product instanceof ConcreateProductA);
+        product = SimpleFactory.createB();
+        Assert.assertTrue(product instanceof ConcreateProductB);
     }
 }

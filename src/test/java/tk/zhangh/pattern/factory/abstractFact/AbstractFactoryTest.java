@@ -1,11 +1,9 @@
 package tk.zhangh.pattern.factory.abstractFact;
 
 import org.junit.Test;
-import tk.zhangh.pattern.factory.abstractFact.factory.FactoryA;
-import tk.zhangh.pattern.factory.abstractFact.factory.FactoryB;
-import tk.zhangh.pattern.factory.abstractFact.factory.IFactort;
-import tk.zhangh.pattern.factory.abstractFact.product.IProduct1;
-import tk.zhangh.pattern.factory.abstractFact.product.IProduct2;
+import tk.zhangh.pattern.factory.abstractFact.factory.CarFactory;
+import tk.zhangh.pattern.factory.abstractFact.factory.LowCarFactory;
+import tk.zhangh.pattern.factory.abstractFact.factory.LuxuryCarFactory;
 
 /**
  * Created by ZhangHao on 2016/3/16.
@@ -13,19 +11,17 @@ import tk.zhangh.pattern.factory.abstractFact.product.IProduct2;
  */
 public class AbstractFactoryTest {
     @Test
-    public void testAbstractFactory(){
-        IFactort factortA = new FactoryA();
-        IProduct1 product1 = factortA.createProduct1();
-        IProduct2 product2 = factortA.createProduct2();
-        System.out.println("Factory A:");
-        product1.operationOne();
-        product2.operationTwo();
+    public void testAbstractFactory() {
+        CarFactory carFactory;
+        carFactory = new LuxuryCarFactory();
+        createCar(carFactory);
+        carFactory = new LowCarFactory();
+        createCar(carFactory);
+    }
 
-        IFactort factortB = new FactoryB();
-        product1 = factortB.createProduct1();
-        product2 = factortB.createProduct2();
-        System.out.println("Factory A:");
-        product1.operationOne();
-        product2.operationTwo();
+    public void createCar(CarFactory carFactory) {
+        carFactory.createEngine().run();
+        carFactory.createSeat().massage();
+        carFactory.createTyre().revolve();
     }
 }
