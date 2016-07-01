@@ -6,6 +6,6 @@ package tk.zhangh.pattern.adapter;
  */
 public class ConcreteTarget implements Target{
     public void say() {
-        System.out.println("say:");
+        System.out.println("say function");
     }
 }

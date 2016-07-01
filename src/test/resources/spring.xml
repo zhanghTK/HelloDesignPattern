@@ -17,7 +17,7 @@
 
        <!--装饰器组装-->
        <bean name="adaptee" class="tk.zhangh.pattern.adapter.Adaptee"/>
-       <bean name="adapter" class="tk.zhangh.pattern.adapter.Adapter2">
+       <bean name="adapter" class="tk.zhangh.pattern.adapter.ObjectAdapter">
               <constructor-arg name="adaptee" ref="adaptee"/>
        </bean>
 

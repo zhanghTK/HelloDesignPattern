@@ -16,21 +16,31 @@ public class AdapterTest {
         applicationContext = new ClassPathXmlApplicationContext("spring.xml");
     }
 
+    /**
+     * 类适配器测试
+     */
     @Test
     public void testAdapterClass(){
+        // 调用正常接口
         Target concreteTarget = new ConcreteTarget();
         concreteTarget.say();
 
-        Target adapter = new Adapter();
+        // 调用适配后接口
+        Target adapter = new ClassAdapter();
         adapter.say();
     }
 
+    /**
+     * 对象适配器测试
+     */
     @Test
     public void testAdapterObject(){
+        // 调用正常接口
         Target concreteTarget = new ConcreteTarget();
         concreteTarget.say();
 
-        Target adapter = applicationContext.getBean("adapter", Adapter2.class);
+        // 调用适配后接口，使用spring注入
+        Target adapter = applicationContext.getBean("adapter", ObjectAdapter.class);
         adapter.say();
     }
 }
