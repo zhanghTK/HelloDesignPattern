@@ -1,10 +1,13 @@
 package tk.zhangh.pattern.template;
 
+import org.apache.log4j.Logger;
+
 /**
  * 抽象模板
  * Created by ZhangHao on 2016/4/18.
  */
 public abstract class AbstractTemplate {
+    protected Logger logger = Logger.getLogger(this.getClass());
     /**
      * 模板方法
      */
@@ -28,6 +31,6 @@ public abstract class AbstractTemplate {
      * 基本方法，父类实现
      */
     private void concreteMethod(){
-        System.out.println("AbstractTemplate.concreteMethod");
+        logger.info("");
     }
 }

@@ -7,11 +7,11 @@ package tk.zhangh.pattern.template;
 public class ConcreteTemplateA extends AbstractTemplate{
     @Override
     protected void abstractMethod() {
-        System.out.println("ConcreteTemplateA.abstractMethod()");
+        logger.info("");
     }
 
     @Override
     protected void hookMethod() {
-        System.out.println("ConcreteTemplateA.hookMethod()");
+        logger.info("");
     }
 }
