@@ -23,4 +23,26 @@
 
        <!--状态模式-->
        <bean id="context" class="tk.zhangh.pattern.state.Context"/>
+
+        <!--策略模式-->
+        <bean id="strategyA1" class="tk.zhangh.pattern.strategy.StrategyA1"/>
+        <bean id="strategyA2" class="tk.zhangh.pattern.strategy.StrategyA2"/>
+        <bean id="strategyB1" class="tk.zhangh.pattern.strategy.StrategyB1"/>
+        <bean id="strategyB2" class="tk.zhangh.pattern.strategy.StrategyB2"/>
+        <bean id="contextStrategy1" class="tk.zhangh.pattern.strategy.Context">
+            <constructor-arg ref="strategyA1"/>
+            <constructor-arg ref="strategyB1"/>
+        </bean>
+        <bean id="contextStrategy2" class="tk.zhangh.pattern.strategy.Context">
+            <constructor-arg ref="strategyA1"/>
+            <constructor-arg ref="strategyB2"/>
+        </bean>
+        <bean id="contextStrategy3" class="tk.zhangh.pattern.strategy.Context">
+            <constructor-arg ref="strategyA2"/>
+            <constructor-arg ref="strategyB1"/>
+        </bean>
+        <bean id="contextStrategy4" class="tk.zhangh.pattern.strategy.Context">
+            <constructor-arg ref="strategyA2"/>
+            <constructor-arg ref="strategyB2"/>
+        </bean>
 </beans>
