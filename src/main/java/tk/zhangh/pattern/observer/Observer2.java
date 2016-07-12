@@ -1,16 +1,19 @@
 package tk.zhangh.pattern.observer;
 
+import org.apache.log4j.Logger;
+
 import java.util.Observable;
 import java.util.Observer;
 
 /**
  * Created by ZhangHao on 2016/3/12.
  * 观察者2
- * 只关注主题的message2
+ * 只关注主题的subject2
  */
 public class Observer2 implements Observer{
-    String message2;
-    String summary;
+    private static Logger logger = Logger.getLogger(Observer2.class);
+    private String subject;
+    private String summary;
 
     public Observer2(Observable observable) {
         observable.addObserver(this);  // 观察者向主题注册
@@ -21,11 +24,13 @@ public class Observer2 implements Observer{
         if (o instanceof Subject){
             Subject subject = (Subject) o;
             if (arg == null) {
-                this.message2 = subject.getMessage2();
+                logger.info("拉取订阅主题2");
+                this.subject = subject.getSubject2();
             }else {
+                logger.info("被推送信息");
                 this.summary = (String)arg;
             }
-            System.out.println(toString());
+            logger.info(toString());
         }
     }
 
@@ -33,7 +38,7 @@ public class Observer2 implements Observer{
     public String toString() {
         return "Observer2{" +
                 "summary='" + summary + '\'' +
-                ", message2='" + message2 + '\'' +
+                ", subject='" + subject + '\'' +
                 '}';
     }
 }
