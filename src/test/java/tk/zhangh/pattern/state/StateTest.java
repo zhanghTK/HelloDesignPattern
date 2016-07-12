@@ -1,26 +1,38 @@
 package tk.zhangh.pattern.state;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * 测试状态模式
  * Created by ZhangHao on 2016/4/20.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = StateConf.class)
 public class StateTest {
-    ApplicationContext applicationContext;
-    @Before
-    public void initBeanFactory(){
-        applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-    }
+    @Autowired
+    RoomContext roomContext;
 
+    @Autowired
+    @Qualifier("freeState")
+    State freeState;
+
+    @Autowired
+    @Qualifier("bookedState")
+    State bookedState;
+
+    @Autowired
+    @Qualifier("checkedInState")
+    State checkedInState;
 
     @Test
     public void testState(){
-        Context context = applicationContext.getBean("context", Context.class);
-        context.request("1", "Tom");
-        context.request("1", "Tom");
+        roomContext.setState(freeState);
+        roomContext.setState(bookedState);
+        roomContext.setState(checkedInState);
     }
 }

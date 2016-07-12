@@ -5,5 +5,5 @@ package tk.zhangh.pattern.state;
  * Created by ZhangHao on 2016/4/20.
  */
 public interface State {
-    void handle(String name);
+    void handle();
 }

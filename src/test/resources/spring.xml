@@ -22,7 +22,7 @@
        </bean>
 
        <!--状态模式-->
-       <bean id="context" class="tk.zhangh.pattern.state.Context"/>
+       <bean id="context" class="tk.zhangh.pattern.state.RoomContext"/>
 
         <!--策略模式-->
         <bean id="strategyA1" class="tk.zhangh.pattern.strategy.StrategyA1"/>
