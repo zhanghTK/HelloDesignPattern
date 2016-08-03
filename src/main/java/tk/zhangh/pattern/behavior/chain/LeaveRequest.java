@@ -1,12 +1,15 @@
 package tk.zhangh.pattern.behavior.chain;
 
 /**
+ * 请求信息
  * Created by ZhangHao on 2016/7/8.
  */
 public class LeaveRequest {
     private String empName;
     private int leaveDays;
     private String leaveReason;
+
+    public LeaveRequest() {}
 
     public LeaveRequest(String empName, int leaveDays, String leaveReason) {
         this.empName = empName;
@@ -36,5 +39,14 @@ public class LeaveRequest {
 
     public void setLeaveReason(String leaveReason) {
         this.leaveReason = leaveReason;
+    }
+
+    @Override
+    public String toString() {
+        return "LeaveRequest{" +
+                "empName='" + empName + '\'' +
+                ", leaveDays=" + leaveDays +
+                ", leaveReason='" + leaveReason + '\'' +
+                '}';
     }
 }

@@ -3,6 +3,7 @@ package tk.zhangh.pattern.behavior.chain;
 import org.apache.log4j.Logger;
 
 /**
+ * 责任链中三级审核人
  * Created by ZhangHao on 2016/7/8.
  */
 public class GeneralManager extends Leader{
