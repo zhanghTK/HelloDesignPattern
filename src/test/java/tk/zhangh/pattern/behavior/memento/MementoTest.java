@@ -1,8 +1,9 @@
 package tk.zhangh.pattern.behavior.memento;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -13,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = MementoConf.class)
 public class MementoTest {
-    private static Logger logger = Logger.getLogger(MementoTest.class);
+    private static Logger logger = LoggerFactory.getLogger(MementoTest.class);
 
     @Autowired
     CareTaker careTaker;

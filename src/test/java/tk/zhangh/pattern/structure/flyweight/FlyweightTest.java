@@ -1,8 +1,9 @@
 package tk.zhangh.pattern.structure.flyweight;
 
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tk.zhangh.pattern.structure.flyweight.chess.ChessFlyweight;
 import tk.zhangh.pattern.structure.flyweight.chess.ChessFlyweightFactory;
 import tk.zhangh.pattern.structure.flyweight.chess.Coordinate;
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by ZhangHao on 2016/7/8.
  */
 public class FlyweightTest {
-    private static Logger logger = Logger.getLogger(FlyweightTest.class);
+    private static Logger logger = LoggerFactory.getLogger(FlyweightTest.class);
     @Test
     public void testFlyweight() {
         logger.info("简单享元");
