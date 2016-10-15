@@ -1,6 +1,8 @@
 package tk.zhangh.pattern.behavior.observer;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -11,7 +13,7 @@ import java.util.Observer;
  * 只关注主题的message1
  */
 public class Observer1 implements Observer{
-    private static Logger logger = Logger.getLogger(Observer1.class);
+    private static Logger logger = LoggerFactory.getLogger(Observer1.class);
     private String message1;
     private String summary;
 

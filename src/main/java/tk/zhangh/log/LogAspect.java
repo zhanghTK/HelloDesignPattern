@@ -1,10 +1,11 @@
 package tk.zhangh.log;
 
-import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ import java.util.Arrays;
  */
 @Aspect
 public class LogAspect {
-    private static Logger logger = Logger.getLogger(LogAspect.class);
+    private static Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
     @Pointcut("execution(* tk.zhangh.pattern.behavior.chain.*.*(..))")
     private void selectAll() {}

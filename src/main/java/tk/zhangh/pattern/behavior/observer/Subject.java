@@ -1,6 +1,7 @@
 package tk.zhangh.pattern.behavior.observer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.Observable;
@@ -11,7 +12,7 @@ import java.util.Observable;
  */
 @Component
 public class Subject extends Observable{
-    private static Logger logger = Logger.getLogger(Subject.class);
+    private static Logger logger = LoggerFactory.getLogger(Subject.class);
     private String subject1;  // 信息1
     private String subject2;  // 信息2
 

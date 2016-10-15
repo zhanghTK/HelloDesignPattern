@@ -1,6 +1,7 @@
 package tk.zhangh.pattern.behavior.strategy;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by zhanghao on 16/3/10.
@@ -8,7 +9,7 @@ import org.apache.log4j.Logger;
  * 实现方法B1
  */
 public class StrategyB1 implements StrategyB{
-    private static Logger logger = Logger.getLogger(StrategyB1.class);
+    private static Logger logger = LoggerFactory.getLogger(StrategyB1.class);
     @Override
     public void executeStrategy() {
         logger.info("");

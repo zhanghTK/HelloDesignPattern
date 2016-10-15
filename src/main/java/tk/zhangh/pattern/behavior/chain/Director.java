@@ -1,13 +1,15 @@
 package tk.zhangh.pattern.behavior.chain;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 责任链中一级审核人
  * Created by ZhangHao on 2016/7/8.
  */
 public class Director extends Leader{
-    private Logger logger = Logger.getLogger(Director.class);
+    private Logger logger = LoggerFactory.getLogger(Director.class);
 
     public Director(String name) {
         super(name);

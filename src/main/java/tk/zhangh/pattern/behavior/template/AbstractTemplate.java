@@ -1,13 +1,14 @@
 package tk.zhangh.pattern.behavior.template;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 抽象模板
  * Created by ZhangHao on 2016/4/18.
  */
 public abstract class AbstractTemplate {
-    protected Logger logger = Logger.getLogger(this.getClass());
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
     /**
      * 模板方法
      */
