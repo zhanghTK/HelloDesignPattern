@@ -9,15 +9,15 @@ import java.util.List;
  * 建造者模式中的产品类
  * Created by ZhangHao on 2016/10/15.
  */
-public class EmailSendMain {
-    private String template;  // 模板名称
-    private List<String> subjects;  // 主题参数列表
-    private List<String> contents;  // 内容参数列表
-    private List<String> toPersons;  // 收件人列表
-    private List<String> ccPersons;  // 抄送人列表
-    private List<String> bccPersons;  // 暗送人列表
-    private String docName;  // 文档名称
-    private List<String> fileNames;  // 文件名称列表
+public final class EmailSendMain {
+    private final String template;  // 模板名称
+    private final List<String> subjects;  // 主题参数列表
+    private final List<String> contents;  // 内容参数列表
+    private final List<String> toPersons;  // 收件人列表
+    private final List<String> ccPersons;  // 抄送人列表
+    private final List<String> bccPersons;  // 暗送人列表
+    private final String docName;  // 文档名称
+    private final List<String> fileNames;  // 文件名称列表
 
     private EmailSendMain(Builder builder) {
         this.template = builder.template;
